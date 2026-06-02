@@ -12,5 +12,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y += 100 * delta
 	var collision: KinematicCollision2D = move_and_collide(velocity * delta)
 	if collision:
+		
 		velocity = velocity.bounce(collision.get_normal())
 		velocity *= 2
