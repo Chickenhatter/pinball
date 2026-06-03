@@ -6,8 +6,6 @@ const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta: float) -> void:
-	print($".".rotation_degrees)
-	print(up)
 	if $".".rotation_degrees <= 0:
 		if Input.is_action_just_pressed('ui_f'):
 			up = true
