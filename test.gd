@@ -8,8 +8,5 @@ var direction: Vector2
 var speed = 300
 func _physics_process(delta: float) -> void:
 	if Global.marble_go == true:
-		cativate = true
-		
-	if cativate == true:
 		velocity.y -= 232 * delta
 		move_and_slide()

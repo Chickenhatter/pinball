@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://4d02esqgwlh1" path="res://code/global.gd" id="1_uxavs"]
 [ext_resource type="Texture2D" uid="uid://dqymllkegnbum" path="res://icon.svg" id="2_7us4m"]
+[ext_resource type="Script" uid="uid://brjotgdlswvsn" path="res://code/ball.gd" id="2_px60l"]
 [ext_resource type="Script" uid="uid://du3er1ibqt7px" path="res://code/lpusher.gd" id="3_5eq27"]
-[ext_resource type="Script" uid="uid://b0y6vbxnse2yt" path="res://test.gd" id="3_7us4m"]
 [ext_resource type="Script" uid="uid://cdt0dkhyo48vx" path="res://code/rpusher.gd" id="4_5eq27"]
 [ext_resource type="Texture2D" uid="uid://bi6lni0qb2e6x" path="res://assets/spring.png" id="6_4xpxx"]
 [ext_resource type="Script" uid="uid://btjnrpqi81s12" path="res://code/spring.gd" id="6_px60l"]
@@ -11,8 +11,8 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_snm7k"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxavs"]
-size = Vector2(176.36789, 53.282043)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8qjn"]
+size = Vector2(170.5, 161)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xpxx"]
 size = Vector2(484, 54)
@@ -21,10 +21,13 @@ size = Vector2(484, 54)
 size = Vector2(15, 782)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_px60l"]
-size = Vector2(53, 830)
+size = Vector2(53, 669)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wd8n7"]
-size = Vector2(312.62445, 20)
+size = Vector2(349.28976, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s81ap"]
+size = Vector2(20, 899)
 
 [node name="Node2D" type="Node2D" unique_id=1136323201]
 
@@ -39,7 +42,7 @@ position = Vector2(-576.636, 265.8964)
 collision_layer = 255
 collision_mask = 255
 platform_floor_layers = 4294901760
-script = ExtResource("3_7us4m")
+script = ExtResource("2_px60l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Balls/Ballone" unique_id=2044172758]
 shape = SubResource("CircleShape2D_snm7k")
@@ -67,14 +70,13 @@ collision_mask = 128
 platform_floor_layers = 4294901760
 script = ExtResource("3_5eq27")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Pusher/Left/Pusher" unique_id=439656177]
-position = Vector2(86.157684, 17.229483)
-shape = SubResource("RectangleShape2D_uxavs")
-
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Pusher/Left/Pusher" unique_id=474883624]
 position = Vector2(87.81087, 0.07211304)
 scale = Vector2(1.377373, 0.15424776)
 texture = ExtResource("2_7us4m")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Pusher/Left/Pusher" unique_id=272474251]
+polygon = PackedVector2Array(-8.73204, -11.124359, 176.46599, -8.351959, -8.392303, 9.464111)
 
 [node name="Right" type="Node2D" parent="Node2D/Pusher" unique_id=1526162922]
 rotation = 2.6179938
@@ -86,16 +88,28 @@ collision_mask = 128
 platform_floor_layers = 4294901760
 script = ExtResource("4_5eq27")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Pusher/Right/Pusher" unique_id=1186858762]
-position = Vector2(87.523705, -17.595484)
-shape = SubResource("RectangleShape2D_uxavs")
-
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Pusher/Right/Pusher" unique_id=2565019]
 position = Vector2(87.81087, 0.07211304)
 scale = Vector2(1.377373, 0.15424776)
 texture = ExtResource("2_7us4m")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Pusher/Right/Pusher" unique_id=391490807]
+position = Vector2(-2.5, 4.330127)
+rotation = -6.195919
+polygon = PackedVector2Array(-8.73204, -11.124359, 176.46599, -8.351959, -8.392303, 9.464111)
+
 [node name="centre" type="Node2D" parent="Node2D/Pusher" unique_id=1114818366]
+
+[node name="pusharea" type="Area2D" parent="Node2D/Pusher" unique_id=1115748349]
+position = Vector2(-48, 519)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Pusher/pusharea" unique_id=1724645159]
+position = Vector2(-56.25, -24.5)
+shape = SubResource("RectangleShape2D_l8qjn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Pusher/pusharea" unique_id=2102522548]
+position = Vector2(185, -23)
+shape = SubResource("RectangleShape2D_l8qjn")
 
 [node name="normal walls" type="Node2D" parent="Node2D" unique_id=75858454]
 
@@ -114,7 +128,7 @@ shape = SubResource("RectangleShape2D_a3nvg")
 [node name="wall4" type="CharacterBody2D" parent="Node2D/normal walls" unique_id=1150626427]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/normal walls/wall4" unique_id=1172449339]
-position = Vector2(434, -94)
+position = Vector2(378, 5.5)
 shape = SubResource("RectangleShape2D_px60l")
 
 [node name="wall5" type="CharacterBody2D" parent="Node2D/normal walls" unique_id=658171091]
@@ -128,8 +142,8 @@ shape = SubResource("RectangleShape2D_wd8n7")
 [node name="wall6" type="CharacterBody2D" parent="Node2D/normal walls" unique_id=1893096745]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/normal walls/wall6" unique_id=472267543]
-position = Vector2(277, 385)
-rotation = 5.7595863
+position = Vector2(253.55902, 398.53366)
+rotation = -0.52359897
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_wd8n7")
 
@@ -146,7 +160,7 @@ shape = SubResource("RectangleShape2D_wd8n7")
 position = Vector2(547, -904)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/normal walls/wall8" unique_id=1912188531]
-position = Vector2(-246.00002, 384)
+position = Vector2(-206.68246, 406.69998)
 rotation = 0.5235988
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_wd8n7")
@@ -172,3 +186,12 @@ texture = ExtResource("6_4xpxx")
 
 [node name="spring-top" type="Node2D" parent="Node2D/shoot/shoot-spring/spring" unique_id=1836266190]
 position = Vector2(2, -14)
+
+[node name="Node2D" type="Node2D" parent="Node2D/shoot" unique_id=623363737]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/shoot/Node2D" unique_id=1140342176]
+position = Vector2(485, 21.5)
+shape = SubResource("RectangleShape2D_s81ap")
+
+[connection signal="body_entered" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_entered"]
+[connection signal="body_exited" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_exited"]
