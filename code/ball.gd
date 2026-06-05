@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var vima = 1
 var ballin = 0
 var game = false
 var call = false
@@ -19,16 +20,21 @@ func _physics_process(delta: float) -> void:
 					vim = 5
 					if (abs(velocity.y) + abs(velocity.x)) < 200:
 						print('a')
-						vim = 9
+						ballin = 2
+						vim = 5
+						vima = 5
 			elif (abs(velocity.y) + abs(velocity.x)) < 100:
 				vim = 5
+				vima = 6
 			velocity = velocity.bounce(collision.get_normal())
-			velocity *= 0.5 * vim * 1
+			velocity.x *= 0.5 * vim * 1
+			velocity.y *= 0.5 * vima * 1
 			vim = 0.6
+			vima = 0.6
 		if Global.currently_up == true:
 			if ballin == 2:
 				print('b')
-				velocity.y += -310
+				velocity.y += -80
 		if collision:
 			if (collision.get_collider().name) == "Pusher":
 				set_collision_layer_value(8, false)

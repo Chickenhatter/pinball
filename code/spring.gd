@@ -17,4 +17,6 @@ func _process(delta: float) -> void:
 		if $spring.scale.y >= 50:
 			spring_go = false
 		$spring.scale.y += 1.4
+	elif $spring.scale.y >= 3:
+		$spring.scale.y -= 2.01
 		

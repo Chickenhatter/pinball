@@ -18,6 +18,10 @@ config/icon="res://icon.svg"
 
 Global="*uid://4d02esqgwlh1"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
 [input]
 
 ui_f={

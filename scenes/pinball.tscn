@@ -29,6 +29,10 @@ size = Vector2(349.28976, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s81ap"]
 size = Vector2(20, 899)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_px60l"]
+radius = 248.36374
+height = 612.0
+
 [node name="Node2D" type="Node2D" unique_id=1136323201]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=181452499]
@@ -38,7 +42,7 @@ rotation = -1.9285889
 script = ExtResource("1_uxavs")
 
 [node name="Ballone" type="CharacterBody2D" parent="Node2D/Balls" unique_id=1359040787]
-position = Vector2(-576.636, 265.8964)
+position = Vector2(-615.62604, 250.25107)
 collision_layer = 255
 collision_mask = 255
 platform_floor_layers = 4294901760
@@ -76,7 +80,7 @@ scale = Vector2(1.377373, 0.15424776)
 texture = ExtResource("2_7us4m")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Pusher/Left/Pusher" unique_id=272474251]
-polygon = PackedVector2Array(-8.73204, -11.124359, 176.46599, -8.351959, -8.392303, 9.464111)
+polygon = PackedVector2Array(-0.1698761, -10.29422, -5.0954895, 109.17432, 177.0115, 30.592926, 173.86792, -6.851959)
 
 [node name="Right" type="Node2D" parent="Node2D/Pusher" unique_id=1526162922]
 rotation = 2.6179938
@@ -110,6 +114,12 @@ shape = SubResource("RectangleShape2D_l8qjn")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Pusher/pusharea" unique_id=2102522548]
 position = Vector2(185, -23)
 shape = SubResource("RectangleShape2D_l8qjn")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D/Pusher" unique_id=787492237]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Pusher/CharacterBody2D" unique_id=1638678089]
+position = Vector2(5, -14)
+polygon = PackedVector2Array(-179, 431, -27, 521, -41, 540, -400, 933, 459, 931, 55, 516, 61, 505, 211, 420, 251, 402, 536, 1009, -544, 997)
 
 [node name="normal walls" type="Node2D" parent="Node2D" unique_id=75858454]
 
@@ -187,11 +197,46 @@ texture = ExtResource("6_4xpxx")
 [node name="spring-top" type="Node2D" parent="Node2D/shoot/shoot-spring/spring" unique_id=1836266190]
 position = Vector2(2, -14)
 
-[node name="Node2D" type="Node2D" parent="Node2D/shoot" unique_id=623363737]
+[node name="shoot_wall" type="Node2D" parent="Node2D/shoot" unique_id=623363737]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/shoot/Node2D" unique_id=1140342176]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D/shoot/shoot_wall" unique_id=290138452]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/shoot/shoot_wall/CharacterBody2D" unique_id=1140342176]
 position = Vector2(485, 21.5)
 shape = SubResource("RectangleShape2D_s81ap")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="Node2D/shoot/shoot_wall" unique_id=2027698359]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/shoot/shoot_wall/CharacterBody2D2" unique_id=251603068]
+polygon = PackedVector2Array(418, -341, 389, -391, 395, 498, 424, 498)
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="Node2D/shoot/shoot_wall" unique_id=2023844635]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/shoot/shoot_wall/CharacterBody2D3" unique_id=1760898252]
+polygon = PackedVector2Array(415, -454, 515, -297, 578, -474)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/shoot/shoot_wall/CharacterBody2D3" unique_id=1769228728]
+position = Vector2(528.00006, -391.00003)
+rotation = -0.21118484
+texture = ExtResource("2_7us4m")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/shoot/shoot_wall/CharacterBody2D3" unique_id=1833186175]
+position = Vector2(376, -346)
+rotation = -0.54105204
+scale = Vector2(0.505538, 0.39843655)
+texture = ExtResource("2_7us4m")
+
+[node name="Node2D" type="Node2D" parent="Node2D" unique_id=360032802]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D/Node2D" unique_id=1766012353]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Node2D/CharacterBody2D" unique_id=1091913027]
+polygon = PackedVector2Array(-277, -234, -377, -233, -379, -642, 594, -635, 581, -241, 336, -232, 327, -299, 302, -359, 262, -411, 211, -450, 151, -475, 88, -483, -29, -483, -93, -475, -153, -450, -205, -410, -244, -359, -269, -298)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Node2D/CharacterBody2D" unique_id=1086492134]
+position = Vector2(29, -235)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_px60l")
 
 [connection signal="body_entered" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_entered"]
 [connection signal="body_exited" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_exited"]
