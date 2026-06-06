@@ -29,13 +29,22 @@ size = Vector2(349.28976, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s81ap"]
 size = Vector2(20, 899)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_px60l"]
-radius = 248.36374
-height = 612.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktps7"]
+size = Vector2(174, 349)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_px60l"]
+radius = 46.52956
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xro5x"]
+size = Vector2(20, 146)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crkxl"]
+size = Vector2(89, 145.5)
 
 [node name="Node2D" type="Node2D" unique_id=1136323201]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=181452499]
+position = Vector2(-48, -3)
 
 [node name="Balls" type="Node2D" parent="Node2D" unique_id=541942027]
 rotation = -1.9285889
@@ -68,7 +77,8 @@ zoom = Vector2(1, 0.5)
 rotation = 0.5235988
 
 [node name="Pusher" type="CharacterBody2D" parent="Node2D/Pusher/Left" unique_id=1356240435]
-position = Vector2(60.07953, 456.0608)
+position = Vector2(150.80643, 385.20438)
+scale = Vector2(0.5, 0.5)
 collision_layer = 128
 collision_mask = 128
 platform_floor_layers = 4294901760
@@ -83,10 +93,12 @@ texture = ExtResource("2_7us4m")
 polygon = PackedVector2Array(-0.1698761, -10.29422, -5.0954895, 109.17432, 177.0115, 30.592926, 173.86792, -6.851959)
 
 [node name="Right" type="Node2D" parent="Node2D/Pusher" unique_id=1526162922]
+position = Vector2(11, -47)
 rotation = 2.6179938
 
 [node name="Pusher" type="CharacterBody2D" parent="Node2D/Pusher/Right" unique_id=226614622]
-position = Vector2(25.80457, -474.69476)
+position = Vector2(104.52443, -465.04153)
+scale = Vector2(0.5, 1)
 collision_layer = 128
 collision_mask = 128
 platform_floor_layers = 4294901760
@@ -102,23 +114,28 @@ position = Vector2(-2.5, 4.330127)
 rotation = -6.195919
 polygon = PackedVector2Array(-8.73204, -11.124359, 176.46599, -8.351959, -8.392303, 9.464111)
 
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Node2D/Pusher/Right/Pusher" unique_id=304868925]
+position = Vector2(-1.5359254, 5.330119)
+scale = Vector2(1, -0.5)
+polygon = PackedVector2Array(-0.1698761, -10.29422, -5.0954895, 109.17432, 177.0115, 30.592926, 173.86792, -6.851959)
+
 [node name="centre" type="Node2D" parent="Node2D/Pusher" unique_id=1114818366]
 
 [node name="pusharea" type="Area2D" parent="Node2D/Pusher" unique_id=1115748349]
 position = Vector2(-48, 519)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Pusher/pusharea" unique_id=1724645159]
-position = Vector2(-56.25, -24.5)
+position = Vector2(-12, -62)
 shape = SubResource("RectangleShape2D_l8qjn")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/Pusher/pusharea" unique_id=2102522548]
-position = Vector2(185, -23)
+position = Vector2(203, -59)
 shape = SubResource("RectangleShape2D_l8qjn")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D/Pusher" unique_id=787492237]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Pusher/CharacterBody2D" unique_id=1638678089]
-position = Vector2(5, -14)
+position = Vector2(35, -79)
 polygon = PackedVector2Array(-179, 431, -27, 521, -41, 540, -400, 933, 459, 931, 55, 516, 61, 505, 211, 420, 251, 402, 536, 1009, -544, 997)
 
 [node name="normal walls" type="Node2D" parent="Node2D" unique_id=75858454]
@@ -126,19 +143,19 @@ polygon = PackedVector2Array(-179, 431, -27, 521, -41, 540, -400, 933, 459, 931,
 [node name="wall" type="CharacterBody2D" parent="Node2D/normal walls" unique_id=1756086642]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/normal walls/wall" unique_id=206066055]
-position = Vector2(32, -591)
+position = Vector2(37, -563)
 shape = SubResource("RectangleShape2D_4xpxx")
 
 [node name="wall3" type="CharacterBody2D" parent="Node2D/normal walls" unique_id=1219545617]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/normal walls/wall3" unique_id=2010493285]
-position = Vector2(-384.5, -60)
+position = Vector2(-267, 21)
 shape = SubResource("RectangleShape2D_a3nvg")
 
 [node name="wall4" type="CharacterBody2D" parent="Node2D/normal walls" unique_id=1150626427]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/normal walls/wall4" unique_id=1172449339]
-position = Vector2(378, 5.5)
+position = Vector2(381, 36)
 shape = SubResource("RectangleShape2D_px60l")
 
 [node name="wall5" type="CharacterBody2D" parent="Node2D/normal walls" unique_id=658171091]
@@ -226,17 +243,84 @@ rotation = -0.54105204
 scale = Vector2(0.505538, 0.39843655)
 texture = ExtResource("2_7us4m")
 
-[node name="Node2D" type="Node2D" parent="Node2D" unique_id=360032802]
+[node name="game_start" type="Area2D" parent="Node2D/shoot" unique_id=1963186840]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D/Node2D" unique_id=1766012353]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/shoot/game_start" unique_id=1362287809]
+position = Vector2(180, -351.00003)
+rotation = -0.79761547
+shape = SubResource("RectangleShape2D_ktps7")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Node2D/CharacterBody2D" unique_id=1091913027]
+[node name="wall special" type="Node2D" parent="Node2D" unique_id=360032802]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D/wall special" unique_id=1766012353]
+position = Vector2(18, -52)
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/wall special/CharacterBody2D" unique_id=1091913027]
 polygon = PackedVector2Array(-277, -234, -377, -233, -379, -642, 594, -635, 581, -241, 336, -232, 327, -299, 302, -359, 262, -411, 211, -450, 151, -475, 88, -483, -29, -483, -93, -475, -153, -450, -205, -410, -244, -359, -269, -298)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Node2D/CharacterBody2D" unique_id=1086492134]
-position = Vector2(29, -235)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_px60l")
+[node name="Node2D" type="Node2D" parent="Node2D/wall special" unique_id=1309378242]
+position = Vector2(-52, 27.000002)
+scale = Vector2(1.2, 1.2)
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="Node2D/wall special/Node2D" unique_id=904509602]
+position = Vector2(82.49999, -84.99999)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/wall special/Node2D/CharacterBody2D3" unique_id=1157621739]
+polygon = PackedVector2Array(-262, 214, -243, 214, -87, 375, -87, 406, -275, 404, -276, 214)
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="Node2D/wall special/Node2D" unique_id=1122452074]
+position = Vector2(81.333336, -83.333336)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/wall special/Node2D/CharacterBody2D2" unique_id=1137666664]
+polygon = PackedVector2Array(-262, 214, -243, 214, -87, 375, -87, 406, -275, 404, -276, 214)
+
+[node name="bouncer" type="Node2D" parent="Node2D" unique_id=817994479]
+
+[node name="bouncer" type="CharacterBody2D" parent="Node2D/bouncer" unique_id=1816311652]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/bouncer/bouncer" unique_id=256986753]
+position = Vector2(48, 4)
+shape = SubResource("CircleShape2D_px60l")
+
+[node name="speed" type="Node2D" parent="Node2D" unique_id=1158864402]
+
+[node name="Node2D" type="Node2D" parent="Node2D/speed" unique_id=1228802763]
+
+[node name="awd" type="CharacterBody2D" parent="Node2D/speed/Node2D" unique_id=830407541]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/speed/Node2D/awd" unique_id=738526444]
+position = Vector2(-160, -15)
+shape = SubResource("RectangleShape2D_xro5x")
+
+[node name="boosterlr" type="Area2D" parent="Node2D/speed/Node2D" unique_id=1118525447]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/speed/Node2D/boosterlr" unique_id=1813130291]
+position = Vector2(-215, -15)
+shape = SubResource("RectangleShape2D_crkxl")
+
+[node name="Node2D2" type="Node2D" parent="Node2D/speed" unique_id=1292448864]
+
+[node name="awd" type="CharacterBody2D" parent="Node2D/speed/Node2D2" unique_id=493582115]
+position = Vector2(414, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/speed/Node2D2/awd" unique_id=1917346862]
+position = Vector2(-159, -15)
+shape = SubResource("RectangleShape2D_xro5x")
+
+[node name="boosterlr" type="Area2D" parent="Node2D/speed/Node2D2" unique_id=357417627]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/speed/Node2D2/boosterlr" unique_id=562999282]
+position = Vector2(310, -15)
+shape = SubResource("RectangleShape2D_crkxl")
 
 [connection signal="body_entered" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_entered"]
 [connection signal="body_exited" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_exited"]
+[connection signal="body_entered" from="Node2D/shoot/game_start" to="Node2D/Balls/Ballone" method="_on_game_start_body_entered"]
+[connection signal="body_entered" from="Node2D/speed/Node2D/boosterlr" to="Node2D/Balls/Ballone" method="_on_boosterlr_body_entered"]
+[connection signal="body_exited" from="Node2D/speed/Node2D/boosterlr" to="Node2D/Balls/Ballone" method="_on_boosterlr_body_exited"]
+[connection signal="body_entered" from="Node2D/speed/Node2D2/boosterlr" to="Node2D/Balls/Ballone" method="_on_boosterlr_body_entered"]
+[connection signal="body_exited" from="Node2D/speed/Node2D2/boosterlr" to="Node2D/Balls/Ballone" method="_on_boosterlr_body_exited"]

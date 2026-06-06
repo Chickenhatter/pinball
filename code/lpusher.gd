@@ -18,3 +18,6 @@ func _physics_process(delta: float) -> void:
 		Global.currently_up = false
 		if $".".rotation_degrees < 0:
 			$".".rotation_degrees += 4
+	if Global.cakeaj == true:
+			up = false
+			Global.cakeaj = false
