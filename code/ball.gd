@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var lrramp = false
 var lrboost = false
 var vima = 1
 var ballin = 0
@@ -35,6 +36,17 @@ func _physics_process(delta: float) -> void:
 			#if ballin == 2:
 				#print('b')
 				#velocity.y += -80
+		if lrboost == true:
+			velocity *= 1.1
+		if lrramp == true:
+			await get_tree().create_timer(0.5).timeout
+			if lrramp == true:
+				print($".".global_position.x)
+				if $".".global_position.x < 0:
+					velocity.x = 100
+				else:
+					velocity.x = -100
+				velocity.y = -90
 		if collision:
 			if (collision.get_collider().name) == "Pusher":
 				if Global.currently_up == true:
@@ -47,8 +59,6 @@ func _physics_process(delta: float) -> void:
 				set_collision_mask_value(8, true)
 			if (collision.get_collider().name) == "bouncer":
 				velocity *= 4
-		if lrboost == true:
-			velocity *= 1.1
 	if Global.marble_go == true:
 		velocity.y = -60000 * delta
 		move_and_slide()
@@ -84,3 +94,13 @@ func _on_boosterlr_body_entered(body: Node2D) -> void:
 func _on_boosterlr_body_exited(body: Node2D) -> void:
 	if body.name == "Ballone":
 		lrboost = false
+
+
+func _on_lrramp_body_entered(body: Node2D) -> void:
+	if body.name == "Ballone":
+		lrramp = true
+
+
+func _on_lrramp_body_exited(body: Node2D) -> void:
+	if body.name == "Ballone":
+		lrramp = false
