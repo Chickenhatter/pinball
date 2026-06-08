@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bi6lni0qb2e6x" path="res://assets/spring.png" id="6_4xpxx"]
 [ext_resource type="Script" uid="uid://btjnrpqi81s12" path="res://code/spring.gd" id="6_px60l"]
 [ext_resource type="Texture2D" uid="uid://7r2hwfagl685" path="res://assets/cork.png" id="8_wd8n7"]
+[ext_resource type="Texture2D" uid="uid://bvooe538x23jv" path="res://assets/scenario/ramp-modified.png" id="9_ktps7"]
+[ext_resource type="Texture2D" uid="uid://bnkyxyho0vgyb" path="res://assets/scenario/ball-modified.png" id="9_l8qjn"]
+[ext_resource type="Script" uid="uid://cd4g7as5g072y" path="res://code/endswap.gd" id="9_wd8n7"]
+[ext_resource type="Texture2D" uid="uid://bqwonbm1thwxd" path="res://assets/scenario/ballex-modified.png" id="10_ktps7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_snm7k"]
 
@@ -35,6 +39,43 @@ size = Vector2(174, 349)
 [sub_resource type="CircleShape2D" id="CircleShape2D_px60l"]
 radius = 46.52956
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_xro5x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_l8qjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ktps7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l8qjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ktps7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l8qjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ktps7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l8qjn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ktps7")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 10.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xro5x"]
 size = Vector2(20, 146)
 
@@ -42,10 +83,16 @@ size = Vector2(20, 146)
 size = Vector2(89, 145.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6rjl"]
-size = Vector2(306.88437, 1.4141731)
+size = Vector2(310.41992, 0.7071285)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqqhf"]
-size = Vector2(665, 27)
+size = Vector2(943, 214.5)
+
+[sub_resource type="Curve2D" id="Curve2D_s81ap"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 17, 799, 0, 0, 0, 0, 896, 822, 0, 0, 0, 0, 786, -248, 0, 0, 0, 0, 709, -250, 0, 0, 0, 0, 681, -247, 0, 0, 0, 0, 656, -237, 0, 0, 0, 0, 635, -234, 0, 0, 0, 0, 627, -228, 0, 0, 0, 0, 607, -221, 0, 0, 0, 0, 601, -223, 0, 0, 0, 0, 580, -231, 0, 0, 0, 0, 566, -234, 0, 0, 0, 0, 562, -231, 0, 0, 0, 0, 557, -226, 0, 0, 0, 0, 542, -211, 0, 0, 0, 0, 540, -198, 0, 0, 0, 0, 540, -170, 0, 0, 0, 0, 540, -138, 0, 0, 0, 0, 538, -107, 0, 0, 0, 0, 537, -69, 0, 0, 0, 0, 532, -34, 0, 0, 0, 0, 531, 2, 0, 0, 0, 0, 526, 70, 0, 0, 0, 0, 526, 112, 0, 0, 0, 0, 531, 153, 0, 0, 0, 0, 534, 204, 0, 0, 0, 0, 537, 239, 0, 0, 0, 0, 531, 283, 0, 0, 0, 0, 531, 318, 0, 0, 0, 0, 533, 346, 0, 0, 0, 0, 533, 407, 0, 0, 0, 0, 533, 419, 0, 0, 0, 0, 533, 424, 0, 0, 0, 0, 533, 436, 0, 0, 0, 0, 529, 451, 0, 0, 0, 0, 518, 460, 0, 0, 0, 0, 501, 469, 0, 0, 0, 0, 490, 468, 0, 0, 0, 0, 485, 466, 0, 0, 0, 0, 485, 466, 0, 0, 0, 0, 481, 466, 0, 0, 0, 0, 481, 453)
+}
+point_count = 42
 
 [node name="Node2D" type="Node2D" unique_id=1136323201]
 
@@ -80,6 +127,7 @@ zoom = Vector2(1, 0.5)
 [node name="Pusher" type="Node2D" parent="Node2D" unique_id=2114673373]
 
 [node name="Left" type="Node2D" parent="Node2D/Pusher" unique_id=417953920]
+position = Vector2(18, -4.9999995)
 rotation = 0.5235988
 
 [node name="Pusher" type="CharacterBody2D" parent="Node2D/Pusher/Left" unique_id=1356240435]
@@ -99,7 +147,7 @@ texture = ExtResource("2_7us4m")
 polygon = PackedVector2Array(-0.1698761, -10.29422, -5.0954895, 109.17432, 177.0115, 30.592926, 173.86792, -6.851959)
 
 [node name="Right" type="Node2D" parent="Node2D/Pusher" unique_id=1526162922]
-position = Vector2(11, -47)
+position = Vector2(10, -51.000004)
 rotation = 2.6179938
 
 [node name="Pusher" type="CharacterBody2D" parent="Node2D/Pusher/Right" unique_id=226614622]
@@ -278,13 +326,24 @@ rotation = 3.1415927
 scale = Vector2(1, -1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/wall special/Node2D/CharacterBody2D3" unique_id=1157621739]
-polygon = PackedVector2Array(-262, 214, -243, 214, -87, 375, -87, 406, -275, 404, -276, 214)
+polygon = PackedVector2Array(-259.16666, 226.66663, -249.16669, 226.66663, -75.00004, 394.16666, -75.00004, 405.8333, -260.00003, 405.83328)
 
 [node name="CharacterBody2D2" type="CharacterBody2D" parent="Node2D/wall special/Node2D" unique_id=1122452074]
 position = Vector2(81.333336, -83.333336)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/wall special/Node2D/CharacterBody2D2" unique_id=1137666664]
-polygon = PackedVector2Array(-262, 214, -243, 214, -87, 375, -87, 406, -275, 404, -276, 214)
+polygon = PackedVector2Array(-258.8333, 225.83334, -247.16666, 225.83334, -73.00001, 392.5, -73.00001, 404.16666, -258, 404.16666)
+
+[node name="RampModified" type="Sprite2D" parent="Node2D/wall special" unique_id=1648990787]
+position = Vector2(-147, 291)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_ktps7")
+
+[node name="RampModified2" type="Sprite2D" parent="Node2D/wall special" unique_id=1495774103]
+position = Vector2(242, 291)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_ktps7")
+flip_h = true
 
 [node name="bouncer" type="Node2D" parent="Node2D" unique_id=817994479]
 
@@ -293,6 +352,11 @@ polygon = PackedVector2Array(-262, 214, -243, 214, -87, 375, -87, 406, -275, 404
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/bouncer/bouncer" unique_id=256986753]
 position = Vector2(48, 4)
 shape = SubResource("CircleShape2D_px60l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/bouncer" unique_id=513841018]
+position = Vector2(48, 3)
+scale = Vector2(0.12, 0.12)
+sprite_frames = SubResource("SpriteFrames_xro5x")
 
 [node name="speed" type="Node2D" parent="Node2D" unique_id=1158864402]
 
@@ -330,8 +394,8 @@ shape = SubResource("RectangleShape2D_crkxl")
 [node name="lrramp" type="Area2D" parent="Node2D/speed/Node2D3" unique_id=1280246165]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/speed/Node2D3/lrramp" unique_id=1734483286]
-position = Vector2(-165.00005, 266.00003)
-rotation = 0.80198526
+position = Vector2(-149.75, 286.25)
+rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_x6rjl")
 
@@ -340,8 +404,8 @@ shape = SubResource("RectangleShape2D_x6rjl")
 [node name="lrramp" type="Area2D" parent="Node2D/speed/Node2D4" unique_id=1780799516]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/speed/Node2D4/lrramp" unique_id=1783884405]
-position = Vector2(245.00003, 275.00003)
-rotation = 2.3409605
+position = Vector2(246, 285)
+rotation = 2.3561945
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_x6rjl")
 
@@ -369,11 +433,19 @@ texture = ExtResource("2_7us4m")
 
 [node name="Gameswing" type="Node2D" parent="Node2D" unique_id=1550987865]
 
-[node name="Area2D" type="Area2D" parent="Node2D/Gameswing" unique_id=1010133640]
+[node name="endswap" type="Area2D" parent="Node2D/Gameswing" unique_id=1010133640]
+script = ExtResource("9_wd8n7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Gameswing/Area2D" unique_id=785774238]
-position = Vector2(42.5, 614)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Gameswing/endswap" unique_id=785774238]
+position = Vector2(32.5, 750)
 shape = SubResource("RectangleShape2D_mqqhf")
+
+[node name="Path2D" type="Path2D" parent="Node2D/Gameswing" unique_id=829614827]
+curve = SubResource("Curve2D_s81ap")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Gameswing/Path2D" unique_id=1551710934]
+position = Vector2(17, 799)
+rotation = 0.026160128
 
 [connection signal="body_entered" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_entered"]
 [connection signal="body_exited" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_exited"]
@@ -386,3 +458,4 @@ shape = SubResource("RectangleShape2D_mqqhf")
 [connection signal="body_exited" from="Node2D/speed/Node2D3/lrramp" to="Node2D/Balls/Ballone" method="_on_lrramp_body_exited"]
 [connection signal="body_entered" from="Node2D/speed/Node2D4/lrramp" to="Node2D/Balls/Ballone" method="_on_lrramp_body_entered"]
 [connection signal="body_exited" from="Node2D/speed/Node2D4/lrramp" to="Node2D/Balls/Ballone" method="_on_lrramp_body_exited"]
+[connection signal="body_entered" from="Node2D/Gameswing/endswap" to="Node2D/Gameswing/endswap" method="_on_body_entered"]

@@ -20,16 +20,17 @@ func _physics_process(delta: float) -> void:
 			if (collision.get_collider().name) == "Pusher":
 				if Global.currently_up == true:
 					vim = 5
+					vima = 5
 					if (abs(velocity.y) + abs(velocity.x)) < 200:
 						ballin = 2
 						vim = 5
-						vima = 5
-			elif (abs(velocity.y) + abs(velocity.x)) < 100:
-				vim = 2
-				vima = 5
+						vima = 8
+			#elif (abs(velocity.y) + abs(velocity.x)) < 100:
+				#vim = 2
+				#vima = 5
 			velocity = velocity.bounce(collision.get_normal())
 			velocity.x *= 0.5 * vim * 1
-			velocity.y *= 1 * vima * 1
+			velocity.y *= 0.6 * vima * 1
 			vim = 0.6
 			vima = 0.6
 		#if Global.currently_up == true:
@@ -43,10 +44,10 @@ func _physics_process(delta: float) -> void:
 			if lrramp == true:
 				print($".".global_position.x)
 				if $".".global_position.x < 0:
-					velocity.x = 100
+					velocity.x = 200
 				else:
-					velocity.x = -100
-				velocity.y = -90
+					velocity.x = -200
+				velocity.y = 200
 		if collision:
 			if (collision.get_collider().name) == "Pusher":
 				if Global.currently_up == true:
@@ -59,6 +60,7 @@ func _physics_process(delta: float) -> void:
 				set_collision_mask_value(8, true)
 			if (collision.get_collider().name) == "bouncer":
 				velocity *= 4
+				$"../../bouncer/AnimatedSprite2D".play('default')
 	if Global.marble_go == true:
 		velocity.y = -60000 * delta
 		move_and_slide()
