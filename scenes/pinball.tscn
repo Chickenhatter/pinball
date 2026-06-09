@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bnkyxyho0vgyb" path="res://assets/scenario/ball-modified.png" id="9_l8qjn"]
 [ext_resource type="Script" uid="uid://cd4g7as5g072y" path="res://code/endswap.gd" id="9_wd8n7"]
 [ext_resource type="Texture2D" uid="uid://bqwonbm1thwxd" path="res://assets/scenario/ballex-modified.png" id="10_ktps7"]
+[ext_resource type="Texture2D" uid="uid://dot0ss8i4w81r" path="res://assets/scenario/ladder-modified.png" id="16_mqqhf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_snm7k"]
 
@@ -467,6 +468,7 @@ scale = Vector2(0.15624999, 1.1640625)
 texture = ExtResource("2_7us4m")
 
 [node name="Gameswing" type="Node2D" parent="Node2D" unique_id=1550987865]
+z_index = 101
 
 [node name="endswap" type="Area2D" parent="Node2D/Gameswing" unique_id=1010133640]
 script = ExtResource("9_wd8n7")
@@ -481,6 +483,61 @@ curve = SubResource("Curve2D_s81ap")
 [node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Gameswing/Path2D" unique_id=1551710934]
 position = Vector2(17, 799)
 rotation = 0.026160128
+
+[node name="Node2D" type="Node2D" parent="Node2D/Gameswing" unique_id=1298432426]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Gameswing/Node2D" unique_id=1691478223]
+position = Vector2(855, 608)
+scale = Vector2(0.06275, 0.209)
+texture = ExtResource("16_mqqhf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/Gameswing/Node2D" unique_id=148853775]
+position = Vector2(855, 487)
+scale = Vector2(0.06275, 0.209)
+texture = ExtResource("16_mqqhf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D/Gameswing/Node2D" unique_id=1049214469]
+position = Vector2(857, 364)
+scale = Vector2(0.06275, 0.209)
+texture = ExtResource("16_mqqhf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D/Gameswing/Node2D" unique_id=1654201837]
+position = Vector2(856, 241)
+scale = Vector2(0.06275, 0.209)
+texture = ExtResource("16_mqqhf")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D/Gameswing/Node2D" unique_id=683720859]
+position = Vector2(857, 117)
+scale = Vector2(0.06275, 0.209)
+texture = ExtResource("16_mqqhf")
+
+[node name="Node2D" type="Node2D" parent="Node2D/Gameswing/Node2D" unique_id=1085380238]
+position = Vector2(-320, -265)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Gameswing/Node2D/Node2D" unique_id=2078988542]
+position = Vector2(855, 608)
+scale = Vector2(0.06275, 0.209)
+texture = ExtResource("16_mqqhf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/Gameswing/Node2D/Node2D" unique_id=1876380094]
+position = Vector2(855, 487)
+scale = Vector2(0.06275, 0.209)
+texture = ExtResource("16_mqqhf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D/Gameswing/Node2D/Node2D" unique_id=1606504788]
+position = Vector2(857, 364)
+scale = Vector2(0.06275, 0.209)
+texture = ExtResource("16_mqqhf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D/Gameswing/Node2D/Node2D" unique_id=1553797704]
+position = Vector2(856, 241)
+scale = Vector2(0.06275, 0.209)
+texture = ExtResource("16_mqqhf")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D/Gameswing/Node2D/Node2D" unique_id=376608082]
+position = Vector2(857, 117)
+scale = Vector2(0.06275, 0.209)
+texture = ExtResource("16_mqqhf")
 
 [connection signal="body_entered" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_entered"]
 [connection signal="body_exited" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_exited"]
