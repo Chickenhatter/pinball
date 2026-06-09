@@ -5,9 +5,12 @@
 [ext_resource type="Script" uid="uid://brjotgdlswvsn" path="res://code/ball.gd" id="2_px60l"]
 [ext_resource type="Script" uid="uid://du3er1ibqt7px" path="res://code/lpusher.gd" id="3_5eq27"]
 [ext_resource type="Script" uid="uid://cdt0dkhyo48vx" path="res://code/rpusher.gd" id="4_5eq27"]
+[ext_resource type="Texture2D" uid="uid://ccjb4wyaxtkum" path="res://assets/scenario/push-modified.png" id="5_xro5x"]
 [ext_resource type="Texture2D" uid="uid://bi6lni0qb2e6x" path="res://assets/spring.png" id="6_4xpxx"]
 [ext_resource type="Script" uid="uid://btjnrpqi81s12" path="res://code/spring.gd" id="6_px60l"]
+[ext_resource type="Texture2D" uid="uid://bl2koqdt0s8xg" path="res://assets/scenario/top-modified.png" id="7_crkxl"]
 [ext_resource type="Texture2D" uid="uid://7r2hwfagl685" path="res://assets/cork.png" id="8_wd8n7"]
+[ext_resource type="Texture2D" uid="uid://dx1dmhwfd47yu" path="res://assets/scenario/line-modified.png" id="8_x6rjl"]
 [ext_resource type="Texture2D" uid="uid://bvooe538x23jv" path="res://assets/scenario/ramp-modified.png" id="9_ktps7"]
 [ext_resource type="Texture2D" uid="uid://bnkyxyho0vgyb" path="res://assets/scenario/ball-modified.png" id="9_l8qjn"]
 [ext_resource type="Script" uid="uid://cd4g7as5g072y" path="res://code/endswap.gd" id="9_wd8n7"]
@@ -139,9 +142,11 @@ platform_floor_layers = 4294901760
 script = ExtResource("3_5eq27")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Pusher/Left/Pusher" unique_id=474883624]
-position = Vector2(87.81087, 0.07211304)
-scale = Vector2(1.377373, 0.15424776)
-texture = ExtResource("2_7us4m")
+z_index = 10
+position = Vector2(48.03331, -20.803865)
+rotation = -0.14137167
+scale = Vector2(0.1421733, 0.13684425)
+texture = ExtResource("5_xro5x")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Pusher/Left/Pusher" unique_id=272474251]
 polygon = PackedVector2Array(-0.1698761, -10.29422, -5.0954895, 109.17432, 177.0115, 30.592926, 173.86792, -6.851959)
@@ -158,11 +163,6 @@ collision_mask = 128
 platform_floor_layers = 4294901760
 script = ExtResource("4_5eq27")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Pusher/Right/Pusher" unique_id=2565019]
-position = Vector2(87.81087, 0.07211304)
-scale = Vector2(1.377373, 0.15424776)
-texture = ExtResource("2_7us4m")
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Pusher/Right/Pusher" unique_id=391490807]
 position = Vector2(-2.5, 4.330127)
 rotation = -6.195919
@@ -172,6 +172,13 @@ polygon = PackedVector2Array(-8.73204, -11.124359, 176.46599, -8.351959, -8.3923
 position = Vector2(-1.5359254, 5.330119)
 scale = Vector2(1, -0.5)
 polygon = PackedVector2Array(-0.1698761, -10.29422, -5.0954895, 109.17432, 177.0115, 30.592926, 173.86792, -6.851959)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Pusher/Right/Pusher" unique_id=2134657639]
+z_index = 10
+position = Vector2(74.569176, -16.578836)
+rotation = 0.044253934
+scale = Vector2(0.1421733, 0.07146906)
+texture = ExtResource("5_xro5x")
 
 [node name="centre" type="Node2D" parent="Node2D/Pusher" unique_id=1114818366]
 
@@ -247,6 +254,34 @@ position = Vector2(-206.68246, 406.69998)
 rotation = 0.5235988
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_wd8n7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/normal walls" unique_id=1868708233]
+z_index = 100
+position = Vector2(32.500004, -347)
+scale = Vector2(0.4695, 0.5056875)
+texture = ExtResource("7_crkxl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/normal walls" unique_id=1014984515]
+z_index = 1
+position = Vector2(-80, 699.5)
+scale = Vector2(1, 2.0635)
+texture = ExtResource("8_x6rjl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D/normal walls" unique_id=1289605176]
+z_index = 1
+position = Vector2(1199, 532.99994)
+scale = Vector2(1, 2.25)
+texture = ExtResource("8_x6rjl")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D/normal walls" unique_id=163972663]
+position = Vector2(-95.00001, 194)
+rotation = -1.1672019
+texture = ExtResource("8_x6rjl")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D/normal walls" unique_id=2127309259]
+position = Vector2(594.99994, 1132.9999)
+rotation = 1.1676253
+texture = ExtResource("8_x6rjl")
 
 [node name="shoot" type="Node2D" parent="Node2D" unique_id=998302505]
 
@@ -394,7 +429,7 @@ shape = SubResource("RectangleShape2D_crkxl")
 [node name="lrramp" type="Area2D" parent="Node2D/speed/Node2D3" unique_id=1280246165]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/speed/Node2D3/lrramp" unique_id=1734483286]
-position = Vector2(-149.75, 286.25)
+position = Vector2(-159.00002, 274)
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_x6rjl")
@@ -404,7 +439,7 @@ shape = SubResource("RectangleShape2D_x6rjl")
 [node name="lrramp" type="Area2D" parent="Node2D/speed/Node2D4" unique_id=1780799516]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/speed/Node2D4/lrramp" unique_id=1783884405]
-position = Vector2(246, 285)
+position = Vector2(254, 276)
 rotation = 2.3561945
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_x6rjl")
