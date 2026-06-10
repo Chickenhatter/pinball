@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://brjotgdlswvsn" path="res://code/ball.gd" id="2_px60l"]
 [ext_resource type="Script" uid="uid://du3er1ibqt7px" path="res://code/lpusher.gd" id="3_5eq27"]
 [ext_resource type="Script" uid="uid://cdt0dkhyo48vx" path="res://code/rpusher.gd" id="4_5eq27"]
+[ext_resource type="Script" uid="uid://unqjj754hspu" path="res://code/balltwo.gd" id="4_edg4w"]
 [ext_resource type="Texture2D" uid="uid://ccjb4wyaxtkum" path="res://assets/scenario/push-modified.png" id="5_xro5x"]
 [ext_resource type="Texture2D" uid="uid://bi6lni0qb2e6x" path="res://assets/spring.png" id="6_4xpxx"]
 [ext_resource type="Script" uid="uid://btjnrpqi81s12" path="res://code/spring.gd" id="6_px60l"]
@@ -87,16 +88,16 @@ size = Vector2(20, 146)
 size = Vector2(89, 145.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x6rjl"]
-size = Vector2(310.41992, 0.7071285)
+size = Vector2(378.12543, 0.7071285)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqqhf"]
 size = Vector2(943, 214.5)
 
-[sub_resource type="Curve2D" id="Curve2D_s81ap"]
+[sub_resource type="Curve2D" id="Curve2D_mqqhf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 17, 799, 0, 0, 0, 0, 896, 822, 0, 0, 0, 0, 786, -248, 0, 0, 0, 0, 709, -250, 0, 0, 0, 0, 681, -247, 0, 0, 0, 0, 656, -237, 0, 0, 0, 0, 635, -234, 0, 0, 0, 0, 627, -228, 0, 0, 0, 0, 607, -221, 0, 0, 0, 0, 601, -223, 0, 0, 0, 0, 580, -231, 0, 0, 0, 0, 566, -234, 0, 0, 0, 0, 562, -231, 0, 0, 0, 0, 557, -226, 0, 0, 0, 0, 542, -211, 0, 0, 0, 0, 540, -198, 0, 0, 0, 0, 540, -170, 0, 0, 0, 0, 540, -138, 0, 0, 0, 0, 538, -107, 0, 0, 0, 0, 537, -69, 0, 0, 0, 0, 532, -34, 0, 0, 0, 0, 531, 2, 0, 0, 0, 0, 526, 70, 0, 0, 0, 0, 526, 112, 0, 0, 0, 0, 531, 153, 0, 0, 0, 0, 534, 204, 0, 0, 0, 0, 537, 239, 0, 0, 0, 0, 531, 283, 0, 0, 0, 0, 531, 318, 0, 0, 0, 0, 533, 346, 0, 0, 0, 0, 533, 407, 0, 0, 0, 0, 533, 419, 0, 0, 0, 0, 533, 424, 0, 0, 0, 0, 533, 436, 0, 0, 0, 0, 529, 451, 0, 0, 0, 0, 518, 460, 0, 0, 0, 0, 501, 469, 0, 0, 0, 0, 490, 468, 0, 0, 0, 0, 485, 466, 0, 0, 0, 0, 485, 466, 0, 0, 0, 0, 481, 466, 0, 0, 0, 0, 481, 453)
+"points": PackedVector2Array(0, 0, 0, 0, 39, 751, 0, 0, 0, 0, 41, 892, 0, 0, 0, 0, 860, 836, 0, 0, 0, 0, 847, -351, 0, 0, 0, 0, 822, -307, 0, 0, 0, 0, 680, -303, 0, 0, 0, 0, 538, -232, 0, 0, 0, 0, 535, 417, 0, 0, 0, 0, 526, 434, 0, 0, 0, 0, 478, 459, 0, 0, 0, 0, 449, 467, 0, 0, 0, 0, 426, 468, 0, 0, 0, 0, 390, 466)
 }
-point_count = 42
+point_count = 13
 
 [node name="Node2D" type="Node2D" unique_id=1136323201]
 
@@ -108,7 +109,8 @@ rotation = -1.9285889
 script = ExtResource("1_uxavs")
 
 [node name="Ballone" type="CharacterBody2D" parent="Node2D/Balls" unique_id=1359040787]
-position = Vector2(-294.7342, 214.35666)
+z_index = 104
+position = Vector2(-608.7191, 251.76584)
 collision_layer = 255
 collision_mask = 255
 platform_floor_layers = 4294901760
@@ -118,6 +120,22 @@ script = ExtResource("2_px60l")
 shape = SubResource("CircleShape2D_snm7k")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Balls/Ballone" unique_id=358067336]
+position = Vector2(1.1920929e-07, 0)
+scale = Vector2(0.117187515, 0.11718749)
+texture = ExtResource("2_7us4m")
+
+[node name="Balltwo" type="CharacterBody2D" parent="Node2D/Balls" unique_id=1214476775]
+z_index = 104
+position = Vector2(-608.7191, 251.76584)
+collision_layer = 255
+collision_mask = 255
+platform_floor_layers = 4294901760
+script = ExtResource("4_edg4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Balls/Balltwo" unique_id=2106464069]
+shape = SubResource("CircleShape2D_snm7k")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Balls/Balltwo" unique_id=1328375010]
 position = Vector2(1.1920929e-07, 0)
 scale = Vector2(0.117187515, 0.11718749)
 texture = ExtResource("2_7us4m")
@@ -285,6 +303,7 @@ rotation = 1.1676253
 texture = ExtResource("8_x6rjl")
 
 [node name="shoot" type="Node2D" parent="Node2D" unique_id=998302505]
+z_index = 102
 
 [node name="shoot-spring" type="Node2D" parent="Node2D/shoot" unique_id=994156568]
 position = Vector2(-54, 152)
@@ -430,7 +449,7 @@ shape = SubResource("RectangleShape2D_crkxl")
 [node name="lrramp" type="Area2D" parent="Node2D/speed/Node2D3" unique_id=1280246165]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/speed/Node2D3/lrramp" unique_id=1734483286]
-position = Vector2(-159.00002, 274)
+position = Vector2(-149.1875, 283.8125)
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_x6rjl")
@@ -440,7 +459,7 @@ shape = SubResource("RectangleShape2D_x6rjl")
 [node name="lrramp" type="Area2D" parent="Node2D/speed/Node2D4" unique_id=1780799516]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/speed/Node2D4/lrramp" unique_id=1783884405]
-position = Vector2(254, 276)
+position = Vector2(239.875, 290.125)
 rotation = 2.3561945
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_x6rjl")
@@ -478,11 +497,12 @@ position = Vector2(32.5, 750)
 shape = SubResource("RectangleShape2D_mqqhf")
 
 [node name="Path2D" type="Path2D" parent="Node2D/Gameswing" unique_id=829614827]
-curve = SubResource("Curve2D_s81ap")
+curve = SubResource("Curve2D_mqqhf")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Gameswing/Path2D" unique_id=1551710934]
-position = Vector2(17, 799)
-rotation = 0.026160128
+position = Vector2(850.52466, -29.184492)
+rotation = -1.5817479
+progress = 1827.1621
 
 [node name="Node2D" type="Node2D" parent="Node2D/Gameswing" unique_id=1298432426]
 
@@ -539,15 +559,36 @@ position = Vector2(857, 117)
 scale = Vector2(0.06275, 0.209)
 texture = ExtResource("16_mqqhf")
 
+[node name="Sprite2D6" type="Sprite2D" parent="Node2D/Gameswing/Node2D" unique_id=1137159335]
+position = Vector2(609, -267)
+scale = Vector2(0.0695, 0.19600004)
+skew = 1.1274827
+texture = ExtResource("16_mqqhf")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Node2D/Gameswing/Node2D" unique_id=627186511]
+position = Vector2(509.00006, 444)
+scale = Vector2(0.0695, 0.09333731)
+skew = 1.1274827
+texture = ExtResource("16_mqqhf")
+
 [connection signal="body_entered" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_entered"]
+[connection signal="body_entered" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Balltwo" method="_on_pusharea_body_entered"]
 [connection signal="body_exited" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_exited"]
+[connection signal="body_exited" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Balltwo" method="_on_pusharea_body_exited"]
 [connection signal="body_entered" from="Node2D/shoot/game_start" to="Node2D/Balls/Ballone" method="_on_game_start_body_entered"]
+[connection signal="body_entered" from="Node2D/shoot/game_start" to="Node2D/Balls/Balltwo" method="_on_game_start_body_entered"]
 [connection signal="body_entered" from="Node2D/speed/Node2D/boosterlr" to="Node2D/Balls/Ballone" method="_on_boosterlr_body_entered"]
 [connection signal="body_exited" from="Node2D/speed/Node2D/boosterlr" to="Node2D/Balls/Ballone" method="_on_boosterlr_body_exited"]
 [connection signal="body_entered" from="Node2D/speed/Node2D2/boosterlr" to="Node2D/Balls/Ballone" method="_on_boosterlr_body_entered"]
+[connection signal="body_entered" from="Node2D/speed/Node2D2/boosterlr" to="Node2D/Balls/Balltwo" method="_on_boosterlr_body_entered"]
 [connection signal="body_exited" from="Node2D/speed/Node2D2/boosterlr" to="Node2D/Balls/Ballone" method="_on_boosterlr_body_exited"]
+[connection signal="body_exited" from="Node2D/speed/Node2D2/boosterlr" to="Node2D/Balls/Balltwo" method="_on_boosterlr_body_exited"]
 [connection signal="body_entered" from="Node2D/speed/Node2D3/lrramp" to="Node2D/Balls/Ballone" method="_on_lrramp_body_entered"]
+[connection signal="body_entered" from="Node2D/speed/Node2D3/lrramp" to="Node2D/Balls/Balltwo" method="_on_lrramp_body_entered"]
 [connection signal="body_exited" from="Node2D/speed/Node2D3/lrramp" to="Node2D/Balls/Ballone" method="_on_lrramp_body_exited"]
+[connection signal="body_exited" from="Node2D/speed/Node2D3/lrramp" to="Node2D/Balls/Balltwo" method="_on_lrramp_body_exited"]
 [connection signal="body_entered" from="Node2D/speed/Node2D4/lrramp" to="Node2D/Balls/Ballone" method="_on_lrramp_body_entered"]
 [connection signal="body_exited" from="Node2D/speed/Node2D4/lrramp" to="Node2D/Balls/Ballone" method="_on_lrramp_body_exited"]
+[connection signal="body_entered" from="Node2D/Gameswing/endswap" to="Node2D/Balls/Ballone" method="_on_endswap_body_entered"]
 [connection signal="body_entered" from="Node2D/Gameswing/endswap" to="Node2D/Gameswing/endswap" method="_on_body_entered"]
+[connection signal="body_entered" from="Node2D/Gameswing/endswap" to="Node2D/Balls/Balltwo" method="_on_endswap_body_entered"]
