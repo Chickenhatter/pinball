@@ -1,6 +1,6 @@
 extends Node2D
 var currently_up = false
-var marble_count = 0
+var marble_count = false
 var marble_go = false
 var cakeaj = false
 # Called when the node enters the scene tree for the first time.

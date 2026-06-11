@@ -11,6 +11,14 @@ const JUMP_VELOCITY = -400.0
 var vim = 1
 var direction: Vector2
 var speed = 300
+
+func _ready() -> void:
+	restart()
+	await get_tree().create_timer(5.0).timeout
+	Global.marble_go = true
+
+
+
 func _physics_process(delta: float) -> void:
 	if game == true:
 		if not is_on_floor():
@@ -116,4 +124,16 @@ func _on_lrramp_body_exited(body: Node2D) -> void:
 
 func _on_endswap_body_entered(body: Node2D) -> void:
 	if body.name == "Ballone":
+		restart()
 		game = false
+
+
+
+func restart():
+	lrramp = false
+	lrboost = false
+	vima = 1
+	ballin = 0
+	game = false
+	call = false
+	vim = 1

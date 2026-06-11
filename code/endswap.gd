@@ -23,6 +23,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Ballone":
 		pathmove = true
 		ballone_with = true
+		Global.marble_count = true
 	if body.name == "Balltwo":
 		pathmove = true
 		balltwo_with = true
+		Global.marble_go = true

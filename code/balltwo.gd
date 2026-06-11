@@ -11,6 +11,9 @@ const JUMP_VELOCITY = -400.0
 var vim = 1
 var direction: Vector2
 var speed = 300
+
+
+
 func _physics_process(delta: float) -> void:
 	if game == true:
 		if not is_on_floor():
@@ -67,53 +70,75 @@ func _physics_process(delta: float) -> void:
 			if (collision.get_collider().name) == "bouncer":
 				velocity *= 4
 				$"../../bouncer/AnimatedSprite2D".play('default')
-	if Global.marble_go == true:
+	if Global.marble_count == true:
 		velocity.y = -60000 * delta
 		move_and_slide()
 		var collision: KinematicCollision2D = move_and_collide(velocity * delta)
 		if collision:
-			Global.marble_go = false
+			Global.marble_count = false
 			game = true
 
 
 func _on_pusharea_body_entered(body: Node2D) -> void:
-	if body.name == 'Ballone':
+	if body.name == 'Balltwo':
 		ballin = 1
 		await get_tree().create_timer(0.3).timeout
 		if ballin == 1:
 			ballin = 2
 
 func _on_pusharea_body_exited(body: Node2D) -> void:
-	if body.name == 'Ballone':
+	if body.name == 'Balltwo':
 		ballin = 0
 
 
 func _on_game_start_body_entered(body: Node2D) -> void:
-	if body.name =="Ballone":
+	if body.name =="Balltwo":
 		set_collision_layer_value(9, true)
 		set_collision_mask_value(9, true)
 
 
 func _on_boosterlr_body_entered(body: Node2D) -> void:
-	if body.name == "Ballone":
+	if body.name == "Balltwo":
 		lrboost = true
 
 
 func _on_boosterlr_body_exited(body: Node2D) -> void:
-	if body.name == "Ballone":
+	if body.name == "Balltwo":
 		lrboost = false
 
 
 func _on_lrramp_body_entered(body: Node2D) -> void:
-	if body.name == "Ballone":
+	if body.name == "Balltwo":
 		lrramp = true
 
 
 func _on_lrramp_body_exited(body: Node2D) -> void:
-	if body.name == "Ballone":
+	if body.name == "Balltwo":
 		lrramp = false
 
 
 func _on_endswap_body_entered(body: Node2D) -> void:
-	if body.name == "Ballone":
+	if body.name == "Balltwo":
+		restart()
 		game = false
+
+
+
+func restart():
+	lrramp = false
+	lrboost = false
+	vima = 1
+	ballin = 0
+	game = false
+	call = false
+	vim = 1
+
+
+#$"../Ballone".set_collision_layer_value(1, false)
+#$"../Ballone".set_collision_layer_value(2, false)
+#$"../Ballone".set_collision_layer_value(3, false)
+#$"../Ballone".set_collision_layer_value(4, false)
+#$"../Ballone".set_collision_layer_value(5, false)
+#$"../Ballone".set_collision_layer_value(6, false)
+#$"../Ballone".set_collision_layer_value(7, false)
+#$"../Ballone".set_collision_layer_value(8, false)s

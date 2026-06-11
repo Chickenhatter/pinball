@@ -91,7 +91,7 @@ size = Vector2(89, 145.5)
 size = Vector2(378.12543, 0.7071285)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqqhf"]
-size = Vector2(943, 214.5)
+size = Vector2(1455, 214.5)
 
 [sub_resource type="Curve2D" id="Curve2D_mqqhf"]
 _data = {
@@ -110,7 +110,7 @@ script = ExtResource("1_uxavs")
 
 [node name="Ballone" type="CharacterBody2D" parent="Node2D/Balls" unique_id=1359040787]
 z_index = 104
-position = Vector2(-608.7191, 251.76584)
+position = Vector2(-608.7192, 251.76582)
 collision_layer = 255
 collision_mask = 255
 platform_floor_layers = 4294901760
@@ -136,9 +136,9 @@ script = ExtResource("4_edg4w")
 shape = SubResource("CircleShape2D_snm7k")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Balls/Balltwo" unique_id=1328375010]
-position = Vector2(1.1920929e-07, 0)
-scale = Vector2(0.117187515, 0.11718749)
-texture = ExtResource("2_7us4m")
+position = Vector2(-3.4332275e-05, -1.8119812e-05)
+scale = Vector2(0.02039624, 0.02098288)
+texture = ExtResource("9_l8qjn")
 
 [node name="Uniteractable scene" type="Node2D" parent="Node2D" unique_id=242598729]
 
@@ -341,14 +341,18 @@ polygon = PackedVector2Array(418, -341, 389, -391, 395, 498, 424, 498)
 [node name="CharacterBody2D3" type="CharacterBody2D" parent="Node2D/shoot/shoot_wall" unique_id=2023844635]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/shoot/shoot_wall/CharacterBody2D3" unique_id=1760898252]
+position = Vector2(-42, -102)
+rotation = 0.10615178
 polygon = PackedVector2Array(415, -454, 515, -297, 578, -474)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/shoot/shoot_wall/CharacterBody2D3" unique_id=1769228728]
+visible = false
 position = Vector2(528.00006, -391.00003)
 rotation = -0.21118484
 texture = ExtResource("2_7us4m")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D/shoot/shoot_wall/CharacterBody2D3" unique_id=1833186175]
+visible = false
 position = Vector2(376, -346)
 rotation = -0.54105204
 scale = Vector2(0.505538, 0.39843655)
@@ -493,7 +497,7 @@ z_index = 101
 script = ExtResource("9_wd8n7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Gameswing/endswap" unique_id=785774238]
-position = Vector2(32.5, 750)
+position = Vector2(288.5, 750)
 shape = SubResource("RectangleShape2D_mqqhf")
 
 [node name="Path2D" type="Path2D" parent="Node2D/Gameswing" unique_id=829614827]
@@ -590,5 +594,5 @@ texture = ExtResource("16_mqqhf")
 [connection signal="body_entered" from="Node2D/speed/Node2D4/lrramp" to="Node2D/Balls/Ballone" method="_on_lrramp_body_entered"]
 [connection signal="body_exited" from="Node2D/speed/Node2D4/lrramp" to="Node2D/Balls/Ballone" method="_on_lrramp_body_exited"]
 [connection signal="body_entered" from="Node2D/Gameswing/endswap" to="Node2D/Balls/Ballone" method="_on_endswap_body_entered"]
-[connection signal="body_entered" from="Node2D/Gameswing/endswap" to="Node2D/Gameswing/endswap" method="_on_body_entered"]
 [connection signal="body_entered" from="Node2D/Gameswing/endswap" to="Node2D/Balls/Balltwo" method="_on_endswap_body_entered"]
+[connection signal="body_entered" from="Node2D/Gameswing/endswap" to="Node2D/Gameswing/endswap" method="_on_body_entered"]
