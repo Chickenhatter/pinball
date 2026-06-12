@@ -10,12 +10,18 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if pathmove == true:
-		$"../Path2D/PathFollow2D".progress_ratio += 0.001
+		$"../Path2D/PathFollow2D".progress_ratio += 0.004
 	if ballone_with == true:
 		$"../../Balls/Ballone".global_position = $"../Path2D/PathFollow2D".global_position
 		if $"../Path2D/PathFollow2D".progress_ratio > 0.98:
 			pathmove = false
 			ballone_with = false
+			$"../Path2D/PathFollow2D".progress_ratio = 0
+	if balltwo_with == true:
+		$"../../Balls/Balltwo".global_position = $"../Path2D/PathFollow2D".global_position
+		if $"../Path2D/PathFollow2D".progress_ratio > 0.98:
+			pathmove = false
+			balltwo_with = false
 			$"../Path2D/PathFollow2D".progress_ratio = 0
 
 

@@ -127,7 +127,7 @@ texture = ExtResource("2_7us4m")
 [node name="Balltwo" type="CharacterBody2D" parent="Node2D/Balls" unique_id=1214476775]
 z_index = 104
 position = Vector2(-608.7191, 251.76584)
-collision_layer = 255
+collision_layer = 0
 collision_mask = 255
 platform_floor_layers = 4294901760
 script = ExtResource("4_edg4w")
@@ -144,7 +144,7 @@ texture = ExtResource("9_l8qjn")
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/Uniteractable scene" unique_id=239774827]
 scale = Vector2(2, 1)
-zoom = Vector2(1, 0.5)
+zoom = Vector2(0.5, 0.3)
 
 [node name="Pusher" type="Node2D" parent="Node2D" unique_id=2114673373]
 
@@ -269,8 +269,9 @@ shape = SubResource("RectangleShape2D_wd8n7")
 position = Vector2(547, -904)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/normal walls/wall8" unique_id=1912188531]
-position = Vector2(-206.68246, 406.69998)
-rotation = 0.5235988
+z_index = 102
+position = Vector2(-186, 369.00003)
+rotation = 0.21859676
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_wd8n7")
 
@@ -346,13 +347,12 @@ rotation = 0.10615178
 polygon = PackedVector2Array(415, -454, 515, -297, 578, -474)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/shoot/shoot_wall/CharacterBody2D3" unique_id=1769228728]
-visible = false
-position = Vector2(528.00006, -391.00003)
-rotation = -0.21118484
+position = Vector2(514, -461.99997)
+rotation = -0.47822723
+scale = Vector2(1, 1.6698146)
 texture = ExtResource("2_7us4m")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D/shoot/shoot_wall/CharacterBody2D3" unique_id=1833186175]
-visible = false
 position = Vector2(376, -346)
 rotation = -0.54105204
 scale = Vector2(0.505538, 0.39843655)

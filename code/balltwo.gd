@@ -71,6 +71,14 @@ func _physics_process(delta: float) -> void:
 				velocity *= 4
 				$"../../bouncer/AnimatedSprite2D".play('default')
 	if Global.marble_count == true:
+		$".".set_collision_layer_value(1, true)
+		$".".set_collision_layer_value(2, true)
+		$".".set_collision_layer_value(3, true)
+		$".".set_collision_layer_value(4, true)
+		$".".set_collision_layer_value(5, true)
+		$".".set_collision_layer_value(6, true)
+		$".".set_collision_layer_value(7, true)
+		$".".set_collision_layer_value(8, true)
 		velocity.y = -60000 * delta
 		move_and_slide()
 		var collision: KinematicCollision2D = move_and_collide(velocity * delta)
@@ -120,6 +128,16 @@ func _on_lrramp_body_exited(body: Node2D) -> void:
 func _on_endswap_body_entered(body: Node2D) -> void:
 	if body.name == "Balltwo":
 		restart()
+		$".".set_collision_layer_value(1, false)
+		$".".set_collision_layer_value(2, false)
+		$".".set_collision_layer_value(3, false)
+		$".".set_collision_layer_value(4, false)
+		$".".set_collision_layer_value(5, false)
+		$".".set_collision_layer_value(6, false)
+		$".".set_collision_layer_value(7, false)
+		$".".set_collision_layer_value(8, false)
+		$".".set_collision_layer_value(9, false)
+		$".".set_collision_mask_value(9, false)
 		game = false
 
 
@@ -132,13 +150,4 @@ func restart():
 	game = false
 	call = false
 	vim = 1
-
-
-#$"../Ballone".set_collision_layer_value(1, false)
-#$"../Ballone".set_collision_layer_value(2, false)
-#$"../Ballone".set_collision_layer_value(3, false)
-#$"../Ballone".set_collision_layer_value(4, false)
-#$"../Ballone".set_collision_layer_value(5, false)
-#$"../Ballone".set_collision_layer_value(6, false)
-#$"../Ballone".set_collision_layer_value(7, false)
-#$"../Ballone".set_collision_layer_value(8, false)s
+	speed = 300
