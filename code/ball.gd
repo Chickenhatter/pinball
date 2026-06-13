@@ -14,7 +14,7 @@ var speed = 300
 
 func _ready() -> void:
 	restart()
-	await get_tree().create_timer(5.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	Global.marble_go = true
 
 

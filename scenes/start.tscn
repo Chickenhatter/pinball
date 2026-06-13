@@ -9,7 +9,6 @@
 script = ExtResource("1_u80x2")
 
 [node name="Button" type="Button" parent="." unique_id=199176189]
-self_modulate = Color(1, 1, 1, 0)
 z_index = 300
 offset_left = 270.0
 offset_top = 108.0
@@ -26,6 +25,7 @@ offset_left = 413.0
 offset_top = 138.0
 offset_right = 915.0
 offset_bottom = 319.0
+mouse_filter = 2
 text = "Pinball"
 
 [node name="BalllModified" type="Sprite2D" parent="." unique_id=577403914]
