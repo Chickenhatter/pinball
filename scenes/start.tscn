@@ -4,11 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cjg3lweidkela" path="res://assets/Untitled.png" id="2_bodal"]
 [ext_resource type="Texture2D" uid="uid://s61pa2odykv0" path="res://assets/balll-modified.png" id="3_kdmts"]
 [ext_resource type="Texture2D" uid="uid://ccjb4wyaxtkum" path="res://assets/scenario/push-modified.png" id="4_0auqf"]
+[ext_resource type="Script" uid="uid://bnvs1rlfknkkr" path="res://code/startpush.gd" id="4_y16t7"]
 
 [node name="start" type="Node2D" unique_id=1669279500]
 script = ExtResource("1_u80x2")
 
 [node name="Button" type="Button" parent="." unique_id=199176189]
+self_modulate = Color(1, 1, 1, 0)
 z_index = 300
 offset_left = 270.0
 offset_top = 108.0
@@ -29,12 +31,12 @@ mouse_filter = 2
 text = "Pinball"
 
 [node name="BalllModified" type="Sprite2D" parent="." unique_id=577403914]
-position = Vector2(302, 452)
+position = Vector2(189, 470)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_kdmts")
 
 [node name="BalllModified" type="Sprite2D" parent="BalllModified" unique_id=59382372]
-position = Vector2(302, 452)
+position = Vector2(-3810, 149.99988)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_kdmts")
 
@@ -53,15 +55,24 @@ position = Vector2(138.00002, 91.00003)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_kdmts")
 
-[node name="PushModified" type="Sprite2D" parent="." unique_id=576536515]
-position = Vector2(213, 506)
+[node name="Node2D" type="Node2D" parent="." unique_id=43353448]
+script = ExtResource("4_y16t7")
+
+[node name="Node2D" type="Node2D" parent="Node2D" unique_id=1509997720]
+position = Vector2(67, 573)
+
+[node name="PushModified" type="Sprite2D" parent="Node2D/Node2D" unique_id=576536515]
+position = Vector2(146, -67)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_0auqf")
 
-[node name="PushModified2" type="Sprite2D" parent="." unique_id=399109979]
-position = Vector2(932.00006, 638)
-rotation = -3.1360247
+[node name="Node2D2" type="Node2D" parent="Node2D" unique_id=1253009289]
+position = Vector2(1085, 570)
+
+[node name="PushModified2" type="Sprite2D" parent="Node2D/Node2D2" unique_id=399109979]
+position = Vector2(-147, -66)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_0auqf")
+flip_h = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
