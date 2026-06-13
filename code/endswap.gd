@@ -23,6 +23,8 @@ func _process(delta: float) -> void:
 			pathmove = false
 			balltwo_with = false
 			$"../Path2D/PathFollow2D".progress_ratio = 0
+	if ballone_with == true and balltwo_with == true:
+		pass
 
 
 func _on_body_entered(body: Node2D) -> void:

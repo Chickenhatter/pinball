@@ -53,10 +53,10 @@ func _physics_process(delta: float) -> void:
 			if lrramp == true:
 				print($".".global_position.x)
 				if $".".global_position.x < 0:
-					velocity.x = 200
+					velocity.x = 400
 				else:
-					velocity.x = -200
-				velocity.y = 200
+					velocity.x = -400
+				velocity.y = 400
 		if collision:
 			if (collision.get_collider().name) == "Pusher":
 				if Global.currently_up == true:
@@ -79,7 +79,7 @@ func _physics_process(delta: float) -> void:
 		$".".set_collision_layer_value(6, true)
 		$".".set_collision_layer_value(7, true)
 		$".".set_collision_layer_value(8, true)
-		velocity.y = -60000 * delta
+		velocity.y = -120000 * delta
 		move_and_slide()
 		var collision: KinematicCollision2D = move_and_collide(velocity * delta)
 		if collision:

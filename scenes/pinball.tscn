@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dqymllkegnbum" path="res://icon.svg" id="2_7us4m"]
 [ext_resource type="Script" uid="uid://brjotgdlswvsn" path="res://code/ball.gd" id="2_px60l"]
 [ext_resource type="Script" uid="uid://du3er1ibqt7px" path="res://code/lpusher.gd" id="3_5eq27"]
+[ext_resource type="Texture2D" uid="uid://s61pa2odykv0" path="res://assets/balll-modified.png" id="3_j51fp"]
 [ext_resource type="Script" uid="uid://cdt0dkhyo48vx" path="res://code/rpusher.gd" id="4_5eq27"]
 [ext_resource type="Script" uid="uid://unqjj754hspu" path="res://code/balltwo.gd" id="4_edg4w"]
 [ext_resource type="Texture2D" uid="uid://ccjb4wyaxtkum" path="res://assets/scenario/push-modified.png" id="5_xro5x"]
@@ -19,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dot0ss8i4w81r" path="res://assets/scenario/ladder-modified.png" id="16_mqqhf"]
 [ext_resource type="Texture2D" uid="uid://dyf3hxmygk523" path="res://assets/scenario/updown-modified.png" id="18_kq21y"]
 [ext_resource type="Script" uid="uid://tgrpqbp0xg1h" path="res://code/timer.gd" id="18_yf0xa"]
+[ext_resource type="Texture2D" uid="uid://gdbpio6o7vmy" path="res://assets/scenario/Painted Stripes on Neutral Camel Brown.jpg" id="20_xtbs1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_snm7k"]
 
@@ -121,10 +123,11 @@ script = ExtResource("2_px60l")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Balls/Ballone" unique_id=2044172758]
 shape = SubResource("CircleShape2D_snm7k")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/Balls/Ballone" unique_id=358067336]
-position = Vector2(1.1920929e-07, 0)
-scale = Vector2(0.117187515, 0.11718749)
-texture = ExtResource("2_7us4m")
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D/Balls/Ballone" unique_id=75418686]
+position = Vector2(5.891847, 0.9332148)
+rotation = 1.8513209
+scale = Vector2(0.030136412, 0.029355604)
+texture = ExtResource("3_j51fp")
 
 [node name="Balltwo" type="CharacterBody2D" parent="Node2D/Balls" unique_id=1214476775]
 z_index = 104
@@ -138,9 +141,10 @@ script = ExtResource("4_edg4w")
 shape = SubResource("CircleShape2D_snm7k")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Balls/Balltwo" unique_id=1328375010]
-position = Vector2(-3.4332275e-05, -1.8119812e-05)
-scale = Vector2(0.02039624, 0.02098288)
-texture = ExtResource("9_l8qjn")
+position = Vector2(5.891847, 0.9332148)
+rotation = 1.8513209
+scale = Vector2(0.030136412, 0.029355604)
+texture = ExtResource("3_j51fp")
 
 [node name="Uniteractable scene" type="Node2D" parent="Node2D" unique_id=242598729]
 
@@ -309,7 +313,7 @@ texture = ExtResource("8_x6rjl")
 z_index = 102
 
 [node name="shoot-spring" type="Node2D" parent="Node2D/shoot" unique_id=994156568]
-position = Vector2(-54, 152)
+position = Vector2(-54, 151)
 script = ExtResource("6_px60l")
 
 [node name="cork" type="Sprite2D" parent="Node2D/shoot/shoot-spring" unique_id=788349719]
@@ -600,31 +604,31 @@ text = "10\"32"
 [node name="Sprite2D" type="Sprite2D" parent="Node2D2" unique_id=997334909]
 self_modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 z_index = 300
-position = Vector2(-321, 637)
-scale = Vector2(1, 2.4535)
+position = Vector2(237.99976, 644)
+scale = Vector2(4.194, 2.4535)
 texture = ExtResource("8_x6rjl")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Node2D2" unique_id=438734550]
 self_modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 z_index = 300
-position = Vector2(1417, 510)
-scale = Vector2(1, 2.4535)
+position = Vector2(4138.5, 510)
+scale = Vector2(4.2795, 2.4535)
 texture = ExtResource("8_x6rjl")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Node2D2" unique_id=1170806964]
 self_modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 z_index = 300
-position = Vector2(589, -1478.0001)
+position = Vector2(1306.4907, -3392.3557)
 rotation = -1.5752982
-scale = Vector2(1, 2.4535)
+scale = Vector2(3.2567184, 6.4906077)
 texture = ExtResource("8_x6rjl")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Node2D2" unique_id=1241651280]
 self_modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
 z_index = 300
-position = Vector2(483, 420.99976)
+position = Vector2(1111.0005, -167.00006)
 rotation = -1.5752982
-scale = Vector2(1, 2.4535)
+scale = Vector2(4.164702, 4.52665)
 texture = ExtResource("8_x6rjl")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Node2D2" unique_id=1406958829]
@@ -640,6 +644,14 @@ z_index = 500
 position = Vector2(-287, -465.00003)
 scale = Vector2(0.2, 0.097)
 texture = ExtResource("8_x6rjl")
+
+[node name="Node2D3" type="Node2D" parent="." unique_id=209906746]
+
+[node name="PaintedStripesOnNeutralCamelBrown" type="Sprite2D" parent="." unique_id=454003573]
+z_index = -4096
+position = Vector2(-55.999985, -242.5)
+scale = Vector2(4.1292515, 5.3163266)
+texture = ExtResource("20_xtbs1")
 
 [connection signal="body_entered" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_entered"]
 [connection signal="body_entered" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Balltwo" method="_on_pusharea_body_entered"]
