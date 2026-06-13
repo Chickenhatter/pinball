@@ -52,7 +52,7 @@ func _physics_process(delta: float) -> void:
 				#print('b')
 				#velocity.y += -80
 		if lrboost == true:
-			velocity *= 1.1
+			velocity *= 1.2
 		if lrramp == true:
 			await get_tree().create_timer(0.5).timeout
 			if lrramp == true:

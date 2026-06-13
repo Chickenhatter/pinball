@@ -10,7 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if pathmove == true:
-		$"../Path2D/PathFollow2D".progress_ratio += 0.004
+		$"../Path2D/PathFollow2D".progress_ratio += 0.002
 	if ballone_with == true:
 		$"../../Balls/Ballone".global_position = $"../Path2D/PathFollow2D".global_position
 		if $"../Path2D/PathFollow2D".progress_ratio > 0.98:
@@ -24,7 +24,9 @@ func _process(delta: float) -> void:
 			balltwo_with = false
 			$"../Path2D/PathFollow2D".progress_ratio = 0
 	if ballone_with == true and balltwo_with == true:
-		pass
+		$"../Sprite2D".self_modulate.a = 1
+		get_tree().create_timer(2.0).timeout
+		get_tree().change_scene_to_file("res://scenes/start.tscn")
 
 
 func _on_body_entered(body: Node2D) -> void:

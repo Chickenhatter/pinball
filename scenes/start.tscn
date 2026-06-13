@@ -1,9 +1,67 @@
 [gd_scene format=3 uid="uid://oxqm2oquvjt5"]
 
+[ext_resource type="Script" uid="uid://cykf1cljlwjf" path="res://code/start.gd" id="1_u80x2"]
+[ext_resource type="Texture2D" uid="uid://cjg3lweidkela" path="res://assets/Untitled.png" id="2_bodal"]
+[ext_resource type="Texture2D" uid="uid://s61pa2odykv0" path="res://assets/balll-modified.png" id="3_kdmts"]
+[ext_resource type="Texture2D" uid="uid://ccjb4wyaxtkum" path="res://assets/scenario/push-modified.png" id="4_0auqf"]
+
 [node name="start" type="Node2D" unique_id=1669279500]
+script = ExtResource("1_u80x2")
 
 [node name="Button" type="Button" parent="." unique_id=199176189]
-offset_left = 423.0
-offset_top = 214.0
-offset_right = 773.0
-offset_bottom = 414.0
+self_modulate = Color(1, 1, 1, 0)
+z_index = 300
+offset_left = 270.0
+offset_top = 108.0
+offset_right = 869.0
+offset_bottom = 281.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1941420041]
+position = Vector2(572, 310.00003)
+scale = Vector2(0.58150005, 0.4975)
+texture = ExtResource("2_bodal")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=665442382]
+offset_left = 413.0
+offset_top = 138.0
+offset_right = 915.0
+offset_bottom = 319.0
+text = "Pinball"
+
+[node name="BalllModified" type="Sprite2D" parent="." unique_id=577403914]
+position = Vector2(302, 452)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_kdmts")
+
+[node name="BalllModified" type="Sprite2D" parent="BalllModified" unique_id=59382372]
+position = Vector2(302, 452)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_kdmts")
+
+[node name="BalllModified2" type="Sprite2D" parent="." unique_id=1001062618]
+position = Vector2(991.99994, 310)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_kdmts")
+
+[node name="BalllModified3" type="Sprite2D" parent="." unique_id=530733613]
+position = Vector2(937.99994, 55.00003)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_kdmts")
+
+[node name="BalllModified4" type="Sprite2D" parent="." unique_id=1407050956]
+position = Vector2(138.00002, 91.00003)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_kdmts")
+
+[node name="PushModified" type="Sprite2D" parent="." unique_id=576536515]
+position = Vector2(213, 506)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_0auqf")
+
+[node name="PushModified2" type="Sprite2D" parent="." unique_id=399109979]
+position = Vector2(932.00006, 638)
+rotation = -3.1360247
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_0auqf")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

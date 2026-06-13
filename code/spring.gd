@@ -11,6 +11,8 @@ func _process(delta: float) -> void:
 	$cork.global_position = $"spring/spring-top".global_position
 	if Global.marble_count == true:
 		spring_go = true
+	if Global.marble_go == true:
+		spring_go = true
 	if spring_go == true:
 		if $spring.scale.y >= 50:
 			spring_go = false

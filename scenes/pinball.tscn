@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dot0ss8i4w81r" path="res://assets/scenario/ladder-modified.png" id="16_mqqhf"]
 [ext_resource type="Texture2D" uid="uid://dyf3hxmygk523" path="res://assets/scenario/updown-modified.png" id="18_kq21y"]
 [ext_resource type="Script" uid="uid://tgrpqbp0xg1h" path="res://code/timer.gd" id="18_yf0xa"]
+[ext_resource type="Texture2D" uid="uid://gk72n8run0j1" path="res://assets/pixel-speech-bubble.png" id="19_7pskq"]
 [ext_resource type="Texture2D" uid="uid://gdbpio6o7vmy" path="res://assets/scenario/Painted Stripes on Neutral Camel Brown.jpg" id="20_xtbs1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_snm7k"]
@@ -103,12 +104,16 @@ _data = {
 }
 point_count = 13
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7pskq"]
+radius = 36.013885
+
 [node name="Node2D" type="Node2D" unique_id=1136323201]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=181452499]
 position = Vector2(-48, -3)
 
 [node name="Balls" type="Node2D" parent="Node2D" unique_id=541942027]
+position = Vector2(1, -23)
 rotation = -1.9285889
 script = ExtResource("1_uxavs")
 
@@ -313,7 +318,7 @@ texture = ExtResource("8_x6rjl")
 z_index = 102
 
 [node name="shoot-spring" type="Node2D" parent="Node2D/shoot" unique_id=994156568]
-position = Vector2(-54, 151)
+position = Vector2(-52, 131)
 script = ExtResource("6_px60l")
 
 [node name="cork" type="Sprite2D" parent="Node2D/shoot/shoot-spring" unique_id=788349719]
@@ -575,6 +580,12 @@ scale = Vector2(0.0695, 0.09333731)
 skew = 1.1274827
 texture = ExtResource("16_mqqhf")
 
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Gameswing" unique_id=1845207874]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(-9, 405)
+scale = Vector2(1.3571428, 1.7649573)
+texture = ExtResource("19_7pskq")
+
 [node name="Node2D2" type="Node2D" parent="Node2D" unique_id=1964431217]
 
 [node name="UpdownModified" type="Sprite2D" parent="Node2D/Node2D2" unique_id=2107491535]
@@ -647,11 +658,107 @@ texture = ExtResource("8_x6rjl")
 
 [node name="Node2D3" type="Node2D" parent="." unique_id=209906746]
 
+[node name="Sprite2D" type="Sprite2D" parent="Node2D3" unique_id=1983600341]
+z_index = 1
+position = Vector2(404.00003, 91.749985)
+scale = Vector2(0.13945577, 2.569728)
+texture = ExtResource("20_xtbs1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D3" unique_id=472870484]
+z_index = 100
+position = Vector2(397, -318)
+scale = Vector2(0.091, 0.20375)
+texture = ExtResource("16_mqqhf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D3" unique_id=1539117167]
+z_index = 100
+position = Vector2(294, -495)
+rotation = -0.9717413
+scale = Vector2(0.091, 0.16229923)
+skew = -0.3700098
+texture = ExtResource("16_mqqhf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1876548967]
+z_index = 100
+position = Vector2(376.00006, -441)
+rotation = -0.20311834
+scale = Vector2(0.091, 0.16229923)
+skew = -0.3700099
+texture = ExtResource("16_mqqhf")
+
 [node name="PaintedStripesOnNeutralCamelBrown" type="Sprite2D" parent="." unique_id=454003573]
 z_index = -4096
-position = Vector2(-55.999985, -242.5)
+position = Vector2(222.00002, 60)
 scale = Vector2(4.1292515, 5.3163266)
 texture = ExtResource("20_xtbs1")
+
+[node name="Node2D4" type="Node2D" parent="." unique_id=630345042]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D4" unique_id=1852448884]
+position = Vector2(129, -316)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D4/CharacterBody2D" unique_id=855157406]
+shape = SubResource("CircleShape2D_7pskq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D4/CharacterBody2D" unique_id=1562643123]
+position = Vector2(-2.9999962, -22)
+scale = Vector2(0.105, 0.10524997)
+texture = ExtResource("3_j51fp")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="Node2D4" unique_id=812723128]
+position = Vector2(-116, -322)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D4/CharacterBody2D2" unique_id=375679343]
+shape = SubResource("CircleShape2D_7pskq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D4/CharacterBody2D2" unique_id=1110590149]
+position = Vector2(-2.9999962, -22)
+scale = Vector2(0.105, 0.10524997)
+texture = ExtResource("3_j51fp")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="Node2D4" unique_id=1669473310]
+position = Vector2(5, -182)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D4/CharacterBody2D3" unique_id=1398312614]
+shape = SubResource("CircleShape2D_7pskq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D4/CharacterBody2D3" unique_id=15328641]
+position = Vector2(-2.9999962, -22)
+scale = Vector2(0.105, 0.10524997)
+texture = ExtResource("3_j51fp")
+
+[node name="CharacterBody2D4" type="CharacterBody2D" parent="Node2D4" unique_id=884097310]
+position = Vector2(10, -455)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D4/CharacterBody2D4" unique_id=1324796982]
+shape = SubResource("CircleShape2D_7pskq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D4/CharacterBody2D4" unique_id=1579720663]
+position = Vector2(-2.9999962, -22)
+scale = Vector2(0.105, 0.10524997)
+texture = ExtResource("3_j51fp")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="Node2D4/CharacterBody2D4" unique_id=1329404895]
+position = Vector2(-228, 277)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D4/CharacterBody2D4/CharacterBody2D3" unique_id=583201798]
+shape = SubResource("CircleShape2D_7pskq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D4/CharacterBody2D4/CharacterBody2D3" unique_id=1853218544]
+position = Vector2(-2.9999962, -22)
+scale = Vector2(0.105, 0.10524997)
+texture = ExtResource("3_j51fp")
+
+[node name="CharacterBody2D5" type="CharacterBody2D" parent="Node2D4" unique_id=456754222]
+position = Vector2(219, -185)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D4/CharacterBody2D5" unique_id=468541746]
+shape = SubResource("CircleShape2D_7pskq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D4/CharacterBody2D5" unique_id=65003844]
+position = Vector2(-2.9999962, -22)
+scale = Vector2(0.105, 0.10524997)
+texture = ExtResource("3_j51fp")
 
 [connection signal="body_entered" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_entered"]
 [connection signal="body_entered" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Balltwo" method="_on_pusharea_body_entered"]
