@@ -17,6 +17,8 @@
 [ext_resource type="Script" uid="uid://cd4g7as5g072y" path="res://code/endswap.gd" id="9_wd8n7"]
 [ext_resource type="Texture2D" uid="uid://bqwonbm1thwxd" path="res://assets/scenario/ballex-modified.png" id="10_ktps7"]
 [ext_resource type="Texture2D" uid="uid://dot0ss8i4w81r" path="res://assets/scenario/ladder-modified.png" id="16_mqqhf"]
+[ext_resource type="Texture2D" uid="uid://dyf3hxmygk523" path="res://assets/scenario/updown-modified.png" id="18_kq21y"]
+[ext_resource type="Script" uid="uid://tgrpqbp0xg1h" path="res://code/timer.gd" id="18_yf0xa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_snm7k"]
 
@@ -144,7 +146,7 @@ texture = ExtResource("9_l8qjn")
 
 [node name="Camera2D" type="Camera2D" parent="Node2D/Uniteractable scene" unique_id=239774827]
 scale = Vector2(2, 1)
-zoom = Vector2(0.5, 0.3)
+zoom = Vector2(0.6, 0.6)
 
 [node name="Pusher" type="Node2D" parent="Node2D" unique_id=2114673373]
 
@@ -346,18 +348,6 @@ position = Vector2(-42, -102)
 rotation = 0.10615178
 polygon = PackedVector2Array(415, -454, 515, -297, 578, -474)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D/shoot/shoot_wall/CharacterBody2D3" unique_id=1769228728]
-position = Vector2(514, -461.99997)
-rotation = -0.47822723
-scale = Vector2(1, 1.6698146)
-texture = ExtResource("2_7us4m")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Node2D/shoot/shoot_wall/CharacterBody2D3" unique_id=1833186175]
-position = Vector2(376, -346)
-rotation = -0.54105204
-scale = Vector2(0.505538, 0.39843655)
-texture = ExtResource("2_7us4m")
-
 [node name="game_start" type="Area2D" parent="Node2D/shoot" unique_id=1963186840]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/shoot/game_start" unique_id=1362287809]
@@ -439,7 +429,7 @@ shape = SubResource("RectangleShape2D_crkxl")
 position = Vector2(414, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/speed/Node2D2/awd" unique_id=1917346862]
-position = Vector2(-159, -15)
+position = Vector2(-164, -15)
 shape = SubResource("RectangleShape2D_xro5x")
 
 [node name="boosterlr" type="Area2D" parent="Node2D/speed/Node2D2" unique_id=357417627]
@@ -481,14 +471,20 @@ scale = Vector2(0.15624996, 7.84375)
 texture = ExtResource("2_7us4m")
 
 [node name="Icon3" type="Sprite2D" parent="Node2D/Node2D" unique_id=644638305]
-position = Vector2(-160, -13.5)
+position = Vector2(-144, 23.999998)
+scale = Vector2(0.032249995, 0.1665)
+texture = ExtResource("8_x6rjl")
+
+[node name="Icon4" type="Sprite2D" parent="Node2D/Node2D" unique_id=388195020]
+visible = false
+position = Vector2(251, -15)
 scale = Vector2(0.15624999, 1.1640625)
 texture = ExtResource("2_7us4m")
 
-[node name="Icon4" type="Sprite2D" parent="Node2D/Node2D" unique_id=388195020]
-position = Vector2(255.99997, -14)
-scale = Vector2(0.15624999, 1.1640625)
-texture = ExtResource("2_7us4m")
+[node name="Icon5" type="Sprite2D" parent="Node2D/Node2D" unique_id=236668382]
+position = Vector2(266, 22.999998)
+scale = Vector2(0.032249995, 0.1665)
+texture = ExtResource("8_x6rjl")
 
 [node name="Gameswing" type="Node2D" parent="Node2D" unique_id=1550987865]
 z_index = 101
@@ -575,6 +571,76 @@ scale = Vector2(0.0695, 0.09333731)
 skew = 1.1274827
 texture = ExtResource("16_mqqhf")
 
+[node name="Node2D2" type="Node2D" parent="Node2D" unique_id=1964431217]
+
+[node name="UpdownModified" type="Sprite2D" parent="Node2D/Node2D2" unique_id=2107491535]
+position = Vector2(-215, -11)
+scale = Vector2(0.074999996, 0.096)
+texture = ExtResource("18_kq21y")
+
+[node name="UpdownModified2" type="Sprite2D" parent="Node2D/Node2D2" unique_id=1178304877]
+position = Vector2(310.00003, -12)
+scale = Vector2(0.074999996, 0.096)
+texture = ExtResource("18_kq21y")
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=270361860]
+
+[node name="Timer" type="Timer" parent="Node2D2" unique_id=1243328579]
+autostart = true
+script = ExtResource("18_yf0xa")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D2/Timer" unique_id=1650391914]
+z_index = 4096
+offset_left = -457.0
+offset_top = -525.0
+offset_right = 701.0
+offset_bottom = 598.0
+text = "10\"32"
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D2" unique_id=997334909]
+self_modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+z_index = 300
+position = Vector2(-321, 637)
+scale = Vector2(1, 2.4535)
+texture = ExtResource("8_x6rjl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D2" unique_id=438734550]
+self_modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+z_index = 300
+position = Vector2(1417, 510)
+scale = Vector2(1, 2.4535)
+texture = ExtResource("8_x6rjl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Node2D2" unique_id=1170806964]
+self_modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+z_index = 300
+position = Vector2(589, -1478.0001)
+rotation = -1.5752982
+scale = Vector2(1, 2.4535)
+texture = ExtResource("8_x6rjl")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Node2D2" unique_id=1241651280]
+self_modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+z_index = 300
+position = Vector2(483, 420.99976)
+rotation = -1.5752982
+scale = Vector2(1, 2.4535)
+texture = ExtResource("8_x6rjl")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Node2D2" unique_id=1406958829]
+self_modulate = Color(0.43959734, 0.43959734, 0.43959734, 1)
+z_index = 500
+position = Vector2(-263, -461.00003)
+scale = Vector2(0.24225, 0.116999924)
+texture = ExtResource("8_x6rjl")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Node2D2" unique_id=10826912]
+self_modulate = Color(0.002044355, 0.002044355, 0.002044355, 1)
+z_index = 500
+position = Vector2(-287, -465.00003)
+scale = Vector2(0.2, 0.097)
+texture = ExtResource("8_x6rjl")
+
 [connection signal="body_entered" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_entered"]
 [connection signal="body_entered" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Balltwo" method="_on_pusharea_body_entered"]
 [connection signal="body_exited" from="Node2D/Pusher/pusharea" to="Node2D/Balls/Ballone" method="_on_pusharea_body_exited"]
@@ -596,3 +662,4 @@ texture = ExtResource("16_mqqhf")
 [connection signal="body_entered" from="Node2D/Gameswing/endswap" to="Node2D/Balls/Ballone" method="_on_endswap_body_entered"]
 [connection signal="body_entered" from="Node2D/Gameswing/endswap" to="Node2D/Balls/Balltwo" method="_on_endswap_body_entered"]
 [connection signal="body_entered" from="Node2D/Gameswing/endswap" to="Node2D/Gameswing/endswap" method="_on_body_entered"]
+[connection signal="timeout" from="Node2D2/Timer" to="Node2D2/Timer" method="_on_timeout"]
